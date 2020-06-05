@@ -70,5 +70,5 @@ usage: pin-src <dir-path>
        (let [src-str (slurp file-path)]
          (each name (extract-defsrc-names src-str)
            (sh/$ hermes
-                 build -m ,file-path
+                 build ,file-path
                  -e ,name -o ,name)))))))
